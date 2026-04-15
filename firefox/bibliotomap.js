@@ -27,10 +27,13 @@ function spy() {
 			var place = document.querySelector('.more-actions div');
 			if (place) {
 				const btn = document.createElement("button");
-				btn.textContent = 'Map';
 				btn.id = "btnbibtomap";
-				btn.title = "Ouvrir dans une carte";
-				btn.classList.add('btn');
+				btn.title = "Ouvrir dans une carte (Nouvelle fenêtre)";
+				btn.classList.add('btn-link-like');
+			  const iElt = document.createElement("i");
+				iElt.classList.add('fas');
+				iElt.classList.add('fa-map-marker-alt');
+				btn.appendChild(iElt);
 				place.parentNode.insertBefore(btn, place);
 				
 				btn.addEventListener('click', ()=> {
@@ -42,10 +45,13 @@ function spy() {
 			var place = document.querySelector('.more-actions-mobile a');
 			if (place) {
 				const btn = document.createElement("button");
-				btn.textContent = 'Map';
 				btn.id = "btnbibtomapmobile";
-				btn.title = "Ouvrir dans une carte";
-				btn.classList.add('btn');
+				btn.title = "Ouvrir dans une carte (Nouvelle fenêtre)";
+				btn.classList.add('btn-link-like');
+			  const iElt = document.createElement("i");
+				iElt.classList.add('fas');
+				iElt.classList.add('fa-map-marker-alt');
+				btn.appendChild(iElt);
 				place.parentNode.insertBefore(btn, place);
 				
 				btn.addEventListener('click', ()=> {
