@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Paris Bibliotheques Carte",
-  "version": "1.0.1",
+  "version": "1.0.3",
 
   "description": "Ajoute un bouton permettant d'ouvrir une carte affichant la disponibilité du document dans les bibliothèque de Paris.",
 
@@ -18,7 +18,10 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "{746e63b0-c9e4-4e5f-ba7b-23add8faf33a}"
+      "id": "{746e63b0-c9e4-4e5f-ba7b-23add8faf33a}",
+			"data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
