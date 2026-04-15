@@ -38,6 +38,21 @@ function spy() {
 				});
 			}
 		}
+		if (document.getElementById('btnbibtomapmobile') == null) {
+			var place = document.querySelector('.more-actions-mobile a');
+			if (place) {
+				const btn = document.createElement("button");
+				btn.textContent = 'Map';
+				btn.id = "btnbibtomapmobile";
+				btn.title = "Ouvrir dans une carte";
+				btn.classList.add('btn');
+				place.parentNode.insertBefore(btn, place);
+				
+				btn.addEventListener('click', ()=> {
+					openMap();
+				});
+			}
+		}
 		if (counter < 20) {
 			callSpy(false);
 		}
@@ -113,7 +128,6 @@ function openMap() {
 		urlData += '_' + encodeURIComponent(titleElt.innerHTML);
 	}
 	
-	//window.open('http://localplace.free.fr/bibliotheques.html#' + encodeStr , '_blank');
 	window.open('http://localplace.free.fr/bibliotheques.html#' + urlData, '_blank');
 }
 
