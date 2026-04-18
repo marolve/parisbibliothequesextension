@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+	
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{746e63b0-c9e4-4e5f-ba7b-23add8faf33a}",
+			"data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

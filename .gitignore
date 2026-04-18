@@ -2,3 +2,4 @@ work/
 firefox/web-ext-artifacts/
 firefox/.amo-upload-uuid
 firefox/.web-extension-id
+build/
