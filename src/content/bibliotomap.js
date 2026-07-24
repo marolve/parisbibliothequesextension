@@ -1,66 +1,32 @@
 
-var counter = 0;
-var lastUrl = '';
+const observer = new MutationObserver((mutations) => {
+	console.log('mutated');
+  spy();
+});
 
-callSpy(true);
-
-navigation.addEventListener("navigate", (e) => { 
-	console.log('navigate');
-	callSpy(true);
-})
-
-function callSpy(init) {
-	console.log('spy ' + init);
-	if (init) {
-		counter = 0;
-		lastUrl = window.location.href;
-	}
-	setTimeout( spy, 500);
-}
+observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true
+});
 
 function spy() {
-	if (lastUrl.indexOf(window.location.href) != 0) {
-	  callSpy(true);
-	} else {
-		counter++;
-		if (document.getElementById('btnbibtomap') == null) {
-			var place = document.querySelector('.more-actions div');
-			if (place) {
-				const btn = document.createElement("button");
-				btn.id = "btnbibtomap";
-				btn.title = "Ouvrir dans une carte (Nouvelle fenêtre)";
-				btn.classList.add('btn-link-like');
-			  const iElt = document.createElement("i");
-				iElt.classList.add('fas');
-				iElt.classList.add('fa-map-marker-alt');
-				btn.appendChild(iElt);
-				place.parentNode.insertBefore(btn, place);
-				
-				btn.addEventListener('click', ()=> {
-					openMap();
-				});
-			}
-		}
-		if (document.getElementById('btnbibtomapmobile') == null) {
-			var place = document.querySelector('.more-actions-mobile a');
-			if (place) {
-				const btn = document.createElement("button");
-				btn.id = "btnbibtomapmobile";
-				btn.title = "Ouvrir dans une carte (Nouvelle fenêtre)";
-				btn.classList.add('btn-link-like');
-			  const iElt = document.createElement("i");
-				iElt.classList.add('fas');
-				iElt.classList.add('fa-map-marker-alt');
-				btn.appendChild(iElt);
-				place.parentNode.insertBefore(btn, place);
-				
-				btn.addEventListener('click', ()=> {
-					openMap();
-				});
-			}
-		}
-		if (counter < 20) {
-			callSpy(false);
+	if (document.getElementById('btnbibtomap') == null) {
+		var place = document.querySelector('#detail-holdings .holdings-component h3.category_header span');
+		if (place) {
+			const btn = document.createElement("button");
+			btn.id = "btnbibtomap";
+			btn.title = "Ouvrir dans une carte (Nouvelle fenêtre)";
+			btn.classList.add('btn-link-like');
+			const iElt = document.createElement("i");
+			iElt.classList.add('fas');
+			iElt.classList.add('fa-map-marker-alt');
+			btn.appendChild(iElt);
+			place.parentNode.insertBefore(btn, place);
+			
+			btn.addEventListener('click', ()=> {
+				openMap();
+			});
 		}
 	}
 }
@@ -128,7 +94,7 @@ function openMap() {
 	var urlData = curDateStr.substr(0,4) + curDateStr.substr(5,2) + curDateStr.substr(8,2);
 	urlData += encodeStr;
 	
-	var titleElt = document.querySelector('#notice_longue_description h2');
+	var titleElt = document.querySelector('#detail-holdings .holdings-component h3.category_header span');
 	console.log(titleElt);
 	if (titleElt != null) {
 		urlData += '_' + encodeURIComponent(titleElt.innerHTML);

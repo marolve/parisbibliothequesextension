@@ -1,7 +1,4 @@
-#btnbibtomap, #btnbibtomapmobile {
+#btnbibtomap {
 	margin-right:8px;
-}
-.more-actions .fa-map-marker-alt, .more-actions-mobile .fa-map-marker-alt {
-  font-size: 19px;
-  color: #34a6ff; // a1a1a1
+	color: white;
 }
