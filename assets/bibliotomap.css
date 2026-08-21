@@ -1,4 +1,7 @@
 #btnbibtomap {
 	margin-right:8px;
 	color: white;
+	position: relative;
+  z-index: 10;
+  float: left;
 }
