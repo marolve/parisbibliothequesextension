@@ -1,7 +1,9 @@
 import fs from "fs";
 import path from "path";
+import { execSync } from 'child_process';
 
 const root = process.cwd();
+
 
 const targets = ["chrome", "firefox"];
 
@@ -50,6 +52,11 @@ function build(target) {
   // Générer manifest
   const manifest = mergeManifests(target);
   writeJSON(path.join(outDir, "manifest.json"), manifest);
+	
+	// Zip Extension
+	let stdout = execSync(`tar -a -cf ../${target}.zip *.*`, {
+		cwd: `./build/${target}`
+	});
 
   console.log(`Build ${target} terminé`);
 }

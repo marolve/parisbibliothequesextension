@@ -43,7 +43,7 @@ function openMap() {
 		var bibStatus = '';
 		var nbDays = 0;
 		// days36 en système à base 36 sur deux lettres 36x36=1296 milieu /2=648 (en rayon=647, indisponible=646)
-		var days36 = '';
+		var days36 = (646).toString(36);
 		for (const child of item.children) {
 			if (child.nodeName == 'TD') {
 				if (child.children && child.children.length == 1) {
@@ -52,7 +52,7 @@ function openMap() {
 					}
 				} else {
 					if (child.innerHTML) {
-						if (child.innerHTML.indexOf('En rayon') == 0) {
+						if (child.innerHTML.indexOf('En rayon') == 0 || child.innerHTML.indexOf('En magasin') == 0) {
 							bibStatus = 'OK';
 							days36 = (647).toString(36);
 						}
@@ -81,7 +81,7 @@ function openMap() {
 				break;
 			}
 		}
-		if (bibCode.length == 2) {
+		if (bibCode.length == 2 && days36.length == 2) {
 			encodeStr += bibCode + days36;
 		} else {
 			console.error('Error Bibliotheque not found : ' + bibNameCode);
