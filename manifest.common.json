@@ -1,11 +1,11 @@
 {
   "name": "Paris Bibliotheques Carte",
-  "version": "1.0.9",
+  "version": "1.0.10",
 
   "description": "Ajoute un bouton permettant d'ouvrir une carte affichant la disponibilité du document dans les bibliothèque de Paris.",
 
   "icons": {
-    "48": "assets/icons/marker.svg"
+    "48": "assets/icons/marker48.png"
   },
 	
   "content_scripts": [
