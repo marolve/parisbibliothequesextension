@@ -3,9 +3,9 @@
 Cette extension ajoute une icône lorsqu'on affiche un document des bibliothèques de Paris.
 Cette icône ouvre un plan qui affiche toutes les disponibilités du document selon les horaires choisis.
 
-![alt text](https://github.com/marolve/parisbibliothequesextension/tree/master/description/bibliotheque_extension_page_icone.png?raw=true)
+![alt text](https://github.com/marolve/parisbibliothequesextension/blob/master/description/bibliotheque_extension_page_icone.png?raw=true)
 
-![alt text](https://github.com/marolve/parisbibliothequesextension/tree/master/description/bibliotheque_extension_page_carte.png?raw=true)
+![alt text](https://github.com/marolve/parisbibliothequesextension/blob/master/description/bibliotheque_extension_page_carte.png?raw=true)
 
 L'extension est disponible pour Firefox et Chrome.
 
